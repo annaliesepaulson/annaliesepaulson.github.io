@@ -4,7 +4,7 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 .bundle/
-vendor/
+/vendor/
 node_modules/
 .DS_Store
 .theme_staging/
