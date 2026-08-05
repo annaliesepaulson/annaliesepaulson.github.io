@@ -1,0 +1,53 @@
+{% include base_path %}
+
+<!-- start custom head snippets -->
+
+<!--
+  Set dark mode as default on first visit.
+  The theme toggle button (sun/moon icon in the nav) will still work to switch manually.
+-->
+<script>
+  (function() {
+    if (!localStorage.getItem('theme')) {
+      localStorage.setItem('theme', 'dark');
+    }
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<!--
+  Font Awesome 6 and Academicons served from cdnjs.
+  To serve locally: rerun setup_theme.sh (copies assets/webfonts/) and remove these lines.
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
+<!--
+  Avatar crop.
+  The container is a fixed circle; object-fit: cover fills it without distorting the photo.
+  object-position sets which part of the photo stays centered in the circle:
+  the first value is horizontal (50% = centered), the second is vertical
+  (lower % shows more of the top of the head, higher % shows more of the chin).
+  To zoom in, add e.g. transform: scale(1.4); below object-position.
+-->
+<style>
+  .author__avatar {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+  }
+  .author__avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transform: scale(1.2);
+  }
+</style>
+
+<!-- end custom head snippets -->
