@@ -8,3 +8,6 @@ Gemfile.lock
 node_modules/
 .DS_Store
 .theme_staging/
+.RDataTmp
+.RData
+.Rhistory
